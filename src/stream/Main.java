@@ -3,6 +3,7 @@ package stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -28,5 +29,9 @@ public class Main {
 
         List<Integer> listInt = IntStream.range(10, 15).boxed().collect(Collectors.toList());
         System.out.println(listInt);
+
+        for (int i = 0; i < 100; i++) {
+            System.out.println(ThreadLocalRandom.current().nextInt(1, 5));
+        }
     }
 }
